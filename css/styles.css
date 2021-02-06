@@ -11,13 +11,14 @@
   --bold-font-weight: 700;
   --normal-font-weight: 500;
   --font-size: 14px;
+  --line-height-normal: 1.142;
   --normal-font-size: 16px;
   --common-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --padding-standard: 0 15px;
 }
 * {
   margin: 0px;
   padding: 0px;
-  /* outline: 1px solid red; */
 }
 body {
   font-family: Roboto, sans-serif;
@@ -45,7 +46,7 @@ img {
 }
 .container {
   width: 1200px;
-  padding: 0px 15px;
+  padding: var(--padding-standard);
   margin: 0 auto;
   align-items: center;
 }
@@ -67,10 +68,6 @@ img {
   letter-spacing: var(--letter-spacing);
   color: var(--title-text-color);
 }
-.logo-top:focus,
-.logo-top:hover {
-  outline: var(--outline);
-}
 .web {
   color: var(--accent-color);
 }
@@ -87,7 +84,7 @@ img {
   padding: 32px 0px;
   font-weight: inherit;
   font-size: var(--font-size);
-  line-height: 1.142;
+  line-height: var(--line-height-normal);
   color: var(--title-text-color);
   transition: color 250ms var(--common-cubic-bezier);
 }
@@ -114,7 +111,6 @@ img {
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent-color);
-  outline: var(--outline);
 }
 .nav-link-current::before {
   position: absolute;
@@ -138,10 +134,11 @@ img {
   padding: 32px 0px;
   font-weight: var(--normal-font-weight);
   font-size: var(--font-size);
-  line-height: 1.142;
+  line-height: var(--line-height-normal);
   display: flex;
   align-items: center;
   color: var(--secondary-text-color);
+  fill: currentColor;
   transition: color 250ms var(--common-cubic-bezier);
 }
 .contact-list {
@@ -151,12 +148,10 @@ img {
 }
 .contact-list-icon {
   margin-right: 10px;
-  fill: currentColor;
 }
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-color);
-  outline: var(--outline);
   cursor: pointer;
 }
 .contact-list:not(:first-child) {
@@ -205,7 +200,6 @@ img {
   border-radius: 4px;
   cursor: pointer;
   border: none;
-  outline: none;
   transition: color 250ms var(--common-cubic-bezier),
     box-shadow 250ms var(--common-cubic-bezier);
 }
@@ -214,7 +208,6 @@ img {
   background: var(--accent-color);
   color: var(--common-lite-color);
   box-shadow: 0px 4px 4px rgba(61, 11, 11, 0.15);
-  outline: var(--outline);
 }
 /* section hero end */
 
@@ -255,7 +248,7 @@ img {
   font-style: normal;
   font-weight: var(--bold-font-weight);
   font-size: var(--font-size);
-  line-height: 1.142;
+  line-height: var(--line-height-normal);
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
   color: var(--title-text-color);
@@ -295,7 +288,7 @@ img {
 .what-we-do-container {
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 15px;
+  padding: var(--padding-standard);
   width: 1200px;
 }
 .what-we-do-title {
@@ -320,14 +313,17 @@ img {
 .what-we-do-discr {
   position: absolute;
   bottom: 0;
-  padding: 27px 0;
   width: 100%;
+  height: 70px;
   content: "";
   font-size: var(--font-size);
-  line-height: 1.142;
+  line-height: var(--line-height-normal);
   text-align: center;
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--common-background);
   background: rgba(47, 48, 58, 0.8);
 }
@@ -412,10 +408,6 @@ img {
 .social-link:focus {
   fill: var(--common-lite-color);
   background-color: var(--accent-color);
-  outline: none;
-}
-.social-link:focus {
-  outline: var(--outline);
 }
 /* social links for team members end */
 /* section team end */
@@ -459,7 +451,6 @@ img {
 .clients-link:focus {
   border: 1px solid var(--accent-color);
   fill: var(--accent-color);
-  outline: var(--outline);
 }
 .clients-item {
   display: block;
@@ -478,7 +469,6 @@ img {
 }
 .logo-footer {
   margin-bottom: 20px;
-  width: 146px;
   font-family: Raleway, sans-serif;
   font-weight: var(--bold-font-weight);
   font-size: 26px;
@@ -486,10 +476,7 @@ img {
   letter-spacing: var(--letter-spacing);
   color: var(--common-lite-color);
 }
-.logo-footer:hover,
-.logo-footer:focus {
-  outline: var(--outline);
-}
+
 .footer-address {
   width: 231px;
   line-height: 1.714;
@@ -515,7 +502,6 @@ img {
 .footer-mail-link:hover,
 .footer-mail-link:focus {
   color: var(--accent-color);
-  outline: var(--outline);
 }
 .footer .container {
   align-items: baseline;
@@ -524,7 +510,7 @@ img {
   margin-bottom: 20px;
   font-weight: var(--bold-font-weight);
   font-size: var(--font-size);
-  line-height: 1.143;
+  line-height: var(--line-height-normal);
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
   color: var(--common-lite-color);
@@ -551,7 +537,6 @@ img {
 }
 .footer-social-link:focus {
   background-color: var(--accent-color);
-  outline: var(--outline);
 }
 /* footer end */
 
@@ -578,7 +563,9 @@ img {
   background: var(--common-background);
   border: none;
   cursor: pointer;
-  transition: all 250ms var(--common-cubic-bezier);
+  transition: background 250ms var(--common-cubic-bezier),
+    box-shadow 250ms var(--common-cubic-bezier),
+    color 250ms var(--common-cubic-bezier);
 }
 .filter-item:not(:last-child) {
   margin-right: 8px;
@@ -604,7 +591,6 @@ img {
   box-sizing: border-box;
   text-align: left;
   background: var(--common-lite-color);
-  outline: var(--outline);
 }
 .project-list:nth-child(3n + 1) {
   margin-left: 0px;
@@ -623,7 +609,6 @@ img {
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  outline: var(--outline);
 }
 .project-overlay {
   display: flex;
